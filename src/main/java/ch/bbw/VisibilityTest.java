@@ -1,6 +1,6 @@
 package ch.bbw;
 
-public class VisabilityTest {
+public class VisibilityTest {
 
     private int returnSixPrivate() {
         return 6;
