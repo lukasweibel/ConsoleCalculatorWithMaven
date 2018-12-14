@@ -23,4 +23,10 @@ public class CalculatorTest {
         assertTrue(calculator.subtraktion(25, 10) == 15);
     }
 
+
+    @Test
+    public void testDivisionZweiPositiveIsOk() {
+        assertTrue(calculator.division(50, 10) == 5);
+    }
+
 }
