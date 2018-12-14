@@ -2,6 +2,7 @@ package ch.bbw;
 
 import org.junit.Before;
 import org.junit.Test;
+import sun.jvm.hotspot.utilities.IntegerEnum;
 
 import static org.junit.Assert.*;
 
@@ -89,7 +90,7 @@ public class CalculatorTest {
 
     @Test
     public void testSubtractionMaxAndMin() {
-       assertTrue(calculator.subtraction(Integer.MAX_VALUE, Integer.MIN_VALUE) == -1);
+        assertTrue(calculator.subtraction(Integer.MAX_VALUE, Integer.MIN_VALUE) == -1);
     }
 
     @Test
@@ -99,14 +100,45 @@ public class CalculatorTest {
 
     //Tests class "division"
     @Test
-    public void testDivisionZweiPositiveIsOk() {
+    public void testDivisionTwoPositiveNumbers() {
         assertTrue(calculator.division(50, 10) == 5);
     }
 
+    @Test
+    public void testDivisionPositiveAndNegativeNumber() {
+        assertTrue(calculator.division(100, -10) == -10);
+    }
+
+    @Test
+    public void testDivisionTwoNegativeNumbers() {
+        assertTrue(calculator.division(-100, -10) == 10);
+    }
+
+    @Test
+    public void testDivisionMinAndMax() {
+        assertTrue(calculator.division(Integer.MIN_VALUE, Integer.MAX_VALUE) == -1);
+    }
+
+    @Test
+    public void testDivisionResultIsNegative() {
+        assertTrue(calculator.division(10, -10) == -1);
+    }
+
+    @Test
+    public void testDivisionResultIsZero() {
+        assertTrue(calculator.division(0, 10) == 0);
+    }
+
+    @Test
+    public void testDivisionResultIsMax() {
+        assertTrue(calculator.division(Integer.MAX_VALUE, 1) == Integer.MAX_VALUE);
+    }
+
     @Test(expected = ArithmeticException.class)
-    public void testDivisionDurch0ThrowsExpectedException() {
+    public void testDivisionPositiveNumberAndNumberZeroThrowsExpectedException() {
         assertTrue(calculator.division(10, 0) == 0);
     }
+
 
     // @Test
     //public void testDivisionDurch0ThrowsUnexpectedException() throws ArithmeticException {
