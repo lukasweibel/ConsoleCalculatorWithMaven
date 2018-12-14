@@ -42,7 +42,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testAdditionResultIsUnderMax() {
+    public void testAdditionResultIsUnderMin() {
         assertTrue(calculator.addition(Integer.MIN_VALUE, -25) == Integer.MAX_VALUE - 24);
     }
 
@@ -64,7 +64,37 @@ public class CalculatorTest {
 
     @Test
     public void testSubtractionPositiveAndNegativeNumber() {
-        assertTrue(calculator.subtraction(25, 10) == 15);
+        assertTrue(calculator.subtraction(25, -10) == 35);
+    }
+
+    @Test
+    public void testSubtractionPositiveNumberAndNumberZero() {
+        assertTrue(calculator.subtraction(10, 0) == 10);
+    }
+
+    @Test
+    public void testSubtractionTwoNegativeNumbers() {
+        assertTrue(calculator.subtraction(-10, -10) == 0);
+    }
+
+    @Test
+    public void testSubtractionResultIsOverMax() {
+        assertTrue(calculator.subtraction(Integer.MAX_VALUE, -3) == Integer.MIN_VALUE + 2);
+    }
+
+    @Test
+    public void testSubtractionResultIsUnderMin() {
+        assertTrue(calculator.subtraction(Integer.MIN_VALUE, 25) == Integer.MAX_VALUE - 24);
+    }
+
+    @Test
+    public void testSubtractionMaxAndMin() {
+       assertTrue(calculator.subtraction(Integer.MAX_VALUE, Integer.MIN_VALUE) == -1);
+    }
+
+    @Test
+    public void testSubtractionResultIsPositive() {
+        assertTrue(calculator.subtraction(2, 1) == 1);
     }
 
     //Tests class "division"
