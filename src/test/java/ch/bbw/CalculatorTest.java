@@ -29,4 +29,9 @@ public class CalculatorTest {
         assertTrue(calculator.division(50, 10) == 5);
     }
 
+    @Test(expected=ArithmeticException.class)
+    public void testDivisionDurch0ThrowsExpectedException() {
+        assertTrue(calculator.division(10, 0) == 0);
+    }
+
 }
