@@ -2,7 +2,6 @@ package ch.bbw;
 
 import org.junit.Before;
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.IntegerEnum;
 
 import static org.junit.Assert.*;
 
