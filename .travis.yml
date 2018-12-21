@@ -8,3 +8,4 @@ deploy:
   file: "/home/travis/.m2/repository/ch/bbw/02_ConsoleCalculatorWithMaven/1.0-SNAPSHOT/02_ConsoleCalculatorWithMaven-1.0-SNAPSHOT.jar"
   on:
     repo: lukasweibel/ConsoleCalculatorWithMaven
+    tags: true
