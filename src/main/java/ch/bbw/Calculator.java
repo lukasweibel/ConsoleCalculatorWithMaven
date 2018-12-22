@@ -11,7 +11,7 @@ public class Calculator {
         return value1 / value2;
     }
 
-    public String DeztoHex(int value1){
+    public String dezToHex(int value1){
         return  Integer.toHexString(value1);
     }
 }
