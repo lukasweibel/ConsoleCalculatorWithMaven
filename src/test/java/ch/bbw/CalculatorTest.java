@@ -1,6 +1,7 @@
 package ch.bbw;
 
 import org.junit.Before;
+import org.junit.ComparisonFailure;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -138,6 +139,27 @@ public class CalculatorTest {
         assertTrue(calculator.division(10, 0) == 0);
     }
 
+    //Tests class "dezToHex"
+    @Test
+    public void testDezToHexPositiveNumber() {
+        assertEquals(calculator.dezToHex(70),"46");
+    }
+    @Test
+    public void testDezToHexResultIsZero() {
+        assertEquals(calculator.dezToHex(0),"0");
+    }
+    @Test(expected = ComparisonFailure.class)
+    public void testDezToHexNegativeNumber() {
+        assertEquals(calculator.dezToHex(-70 ),"-7fffffff");
+    }
+    @Test
+    public void testDezToHexMax() {
+        assertEquals(calculator.dezToHex(Integer.MAX_VALUE),"7fffffff");
+    }
+    @Test(expected = ComparisonFailure.class)
+    public void testDezToHexMin() {
+        assertEquals(calculator.dezToHex(Integer.MIN_VALUE),"-7fffffff");
+    }
 
     // @Test
     //public void testDivisionDurch0ThrowsUnexpectedException() throws ArithmeticException {
